@@ -1,0 +1,6 @@
+The virtual enviornment can be created using 
+
+py -m venv venv (if you are using latest version of python, please seach other version command if this does not work!!)
+
+without dependencies this project will not learn, and at first run the train_mask_detect. py file
+to produce the trained model, after that, run the main.py file to finally get the video.
