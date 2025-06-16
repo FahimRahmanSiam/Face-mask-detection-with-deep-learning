@@ -1,30 +1,38 @@
-# Use Python 3.10 slim base
+# Use a base image with Python
 FROM python:3.10-slim
-
-# Install OS dependencies
-RUN apt-get update && apt-get install -y \
-    ffmpeg libsm6 libxext6 libgl1-mesa-glx git && \
-    apt-get clean
 
 # Set working directory
 WORKDIR /app
 
-# Copy requirements and install
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    ffmpeg \
+    libsm6 \
+    libxext6 \
+    pkg-config \
+    libavdevice-dev \
+    libavfilter-dev \
+    libopus-dev \
+    libvpx-dev \
+    libavformat-dev \
+    libavcodec-dev \
+    libavutil-dev \
+    libswscale-dev \
+    libavresample-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements
 COPY requirements.txt .
+
+# Upgrade pip and install Python dependencies
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# Copy app code
+# Copy the rest of the application
 COPY . .
 
-# Streamlit-specific environment settings
-ENV PYTHONUNBUFFERED=1
-ENV STREAMLIT_SERVER_PORT=10000
-ENV STREAMLIT_SERVER_HEADLESS=true
-ENV STREAMLIT_SERVER_ENABLECORS=false
-
-# Expose the port
+# Expose Streamlit's default port
 EXPOSE 10000
 
-# Run the app
+# Run Streamlit app
 CMD ["streamlit", "run", "app.py", "--server.port=10000", "--server.address=0.0.0.0"]
