@@ -1,31 +1,45 @@
-# 🛡️ Real-Time Face Mask Detector (Streamlit App)
+# 🛡️ Real-Time Face Mask Detection App
 
-This is a browser-based real-time face mask detection app built with **TensorFlow**, **OpenCV**, and **Streamlit**.
-
-📸 It uses your device’s webcam to detect whether you're wearing a mask.
+A real-time face mask detection app built with **Streamlit**, **OpenCV**, and **TensorFlow** that uses your webcam to detect whether people are wearing masks.
 
 ---
 
-## 🔍 Features
+## 🧰 Prerequisites
 
-- Detects faces using OpenCV's deep learning face detector
-- Classifies each face with or without a mask using a pre-trained MobileNetV2 model
-- Runs in the browser with a webcam stream (via `streamlit-webrtc`)
-- Clean and interactive Streamlit UI
-
----
-
-## 🚀 Demo
-
-Try the live app:  
-👉 [https://your-streamlit-cloud-url](https://your-streamlit-cloud-url) ← _Update this after deploying_
+- Python **3.10** (Recommended)
+- Git installed
+- Internet connection to download packages
 
 ---
 
-## 📦 Installation
+## 📥 Step 1: Clone the Repository
 
-### 1. Clone the repo
+Open a terminal and run:
 
 ```bash
-git clone https://github.com/yourusername/face-mask-detector-streamlit.git
-cd face-mask-detector-streamlit
+git clone https://github.com/FahimRahmanSiam/Face-mask-detection-with-deep-learning.git
+cd Face-mask-detection-with-deep-learning
+
+## 🛠️ Step 2: Create a Virtual Environment
+It’s recommended to use a virtual environment to avoid conflicts.
+
+mac/linux:
+python3 -m venv facemask-env
+source facemask-env/bin/activate
+
+windows:
+python -m venv facemask-env
+facemask-env\Scripts\activate
+
+## 📦 Step 3: Install Dependencies
+pip install -r requirements.txt
+
+## ▶️ Step 4: Run the App
+streamlit run app.py
+http://localhost:8501
+
+
+🧠 How It Works
+Detects faces in video frames using OpenCV DNN
+Classifies each detected face using a MobileNetV2 deep learning model
+Real-time feedback on screen using Streamlit + WebRTC
