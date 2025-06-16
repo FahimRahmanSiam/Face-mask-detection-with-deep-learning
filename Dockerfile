@@ -24,7 +24,7 @@ RUN apt-get update && apt-get install -y \
 # --- Install Python dependencies ---
 COPY requirements.txt .
 RUN pip install --upgrade pip
-RUN pip install cython  # PyAV needs this to build
+RUN pip install "cython<3.0" 
 RUN pip install --no-cache-dir -r requirements.txt
 
 # --- Copy your app code ---
