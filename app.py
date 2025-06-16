@@ -60,7 +60,7 @@ class MaskDetector(VideoTransformerBase):
 
 # Start webcam
 if run_camera:
-    st.info("✅ Webcam is active. Look into the camera!")
+    st.info("✅ Please select a device to turn on your video!")
     webrtc_streamer(
         key="mask-detect",
         video_transformer_factory=MaskDetector,

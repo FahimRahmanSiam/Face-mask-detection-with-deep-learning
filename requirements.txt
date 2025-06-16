@@ -20,7 +20,7 @@ imutils==0.5.4
 Pillow==9.3.0
 
 # WebRTC dependencies
-aiortc==1.3.2
+aiortc==1.4.0
 aioice==0.7.5
 av==9.2.0
 pyee==9.0.4
