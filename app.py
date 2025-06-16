@@ -33,7 +33,8 @@ run_camera = st.sidebar.checkbox("📷 Start Webcam", value=False)
 def get_models():
     return load_models()
 
-faceNet, maskNet = get_models()
+with st.spinner("Loading face detection and mask classification models..."):
+    faceNet, maskNet = get_models()
 
 # Define the WebRTC transformer
 class MaskDetector(VideoTransformerBase):
