@@ -3,7 +3,7 @@ streamlit==1.33.0
 streamlit-webrtc==0.45.0
 
 # Core ML/AI
-tensorflow==2.10.0  # or tensorflow-cpu==2.10.0 for lighter version
+tensorflow-cpu==2.10.0  # or tensorflow-cpu==2.10.0 for lighter version
 keras==2.10.0
 tensorflow-estimator==2.10.0
 scikit-learn==1.2.2
